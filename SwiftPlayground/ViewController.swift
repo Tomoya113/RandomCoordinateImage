@@ -14,10 +14,23 @@ class ViewController: UIViewController {
 		// Do any additional setup after loading the view.
 		let label = UILabel(frame: .zero)
 		label.text = "テキスト"
-		label.font = UIFont(name: "Keifont", size: 20)
+
+		label.textColor = .black
 		label.frame = CGRect(x: view.bounds.width / 2, y:  300, width: 150, height: 100)
+		label.center = CGPoint(x: view.bounds.width / 2, y: 300)
 		label.textAlignment = .center
-		view.self.addSubview(label)
+		
+		// 背景画像に設定したい画像を定義
+		let image = UIImage(named: "Pepsized_Blur_30")!
+		
+		// ラベルの大きさに画像を調整！
+		let resizedImage = image.resized(toWidth: label.bounds.width)
+		
+		// ラベルの背景に画像を設定！
+		label.backgroundColor = UIColor(patternImage: resizedImage!)
+//
+//		print(label.frame)
+//		view.self.addSubview(label)
 	}
 
 
