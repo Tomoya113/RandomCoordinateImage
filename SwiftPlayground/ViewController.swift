@@ -14,15 +14,9 @@ class ViewController: UIViewController {
 		// Do any additional setup after loading the view.
 		let label = UILabel(frame: .zero)
 		label.text = "テキスト"
-		label.textColor = .black
+		label.font = UIFont(name: "Keifont", size: 20)
 		label.frame = CGRect(x: view.bounds.width / 2, y:  300, width: 150, height: 100)
-		label.center = CGPoint(x: view.bounds.width / 2, y: 300)
 		label.textAlignment = .center
-		let image = UIImage(named: "Pepsized_Blur_30")!
-		let resizedImage = image.resized(toWidth: label.bounds.width)
-		label.backgroundColor = UIColor(patternImage: resizedImage!)
-		
-		print(label.frame)
 		view.self.addSubview(label)
 	}
 

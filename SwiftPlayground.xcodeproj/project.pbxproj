@@ -14,6 +14,7 @@
 		717C28D92565450E002D3F2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717C28D82565450E002D3F2F /* Assets.xcassets */; };
 		717C28DC2565450E002D3F2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 717C28DA2565450E002D3F2F /* LaunchScreen.storyboard */; };
 		717C28EA2566ECFA002D3F2F /* RandomCoordinateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717C28E92566ECFA002D3F2F /* RandomCoordinateViewController.swift */; };
+		717C28F52567AC1D002D3F2F /* keifont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 717C28ED2567A8C5002D3F2F /* keifont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		717C28DB2565450E002D3F2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		717C28DD2565450E002D3F2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		717C28E92566ECFA002D3F2F /* RandomCoordinateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCoordinateViewController.swift; sourceTree = "<group>"; };
+		717C28ED2567A8C5002D3F2F /* keifont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = keifont.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 		717C28C32565450B002D3F2F = {
 			isa = PBXGroup;
 			children = (
+				717C28EE2567A928002D3F2F /* font */,
 				717C28CE2565450B002D3F2F /* SwiftPlayground */,
 				717C28CD2565450B002D3F2F /* Products */,
 			);
@@ -68,6 +71,14 @@
 				717C28DD2565450E002D3F2F /* Info.plist */,
 			);
 			path = SwiftPlayground;
+			sourceTree = "<group>";
+		};
+		717C28EE2567A928002D3F2F /* font */ = {
+			isa = PBXGroup;
+			children = (
+				717C28ED2567A8C5002D3F2F /* keifont.ttf */,
+			);
+			path = font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				717C28F52567AC1D002D3F2F /* keifont.ttf in Resources */,
 				717C28DC2565450E002D3F2F /* LaunchScreen.storyboard in Resources */,
 				717C28D92565450E002D3F2F /* Assets.xcassets in Resources */,
 				717C28D72565450B002D3F2F /* Main.storyboard in Resources */,

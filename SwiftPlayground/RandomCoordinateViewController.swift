@@ -27,10 +27,15 @@ class RandomCoordinateViewController: UIViewController {
 		// 表示したい画像の名前のリスト
 		let imageList: [String] = ["cat", "skyfish", "slime"]
 		
+		// 配列からランダムな名前を取り出す
 		let randomImageElement = imageList.randomElement()!
+		
 		// UIImageの初期化
 		let image: UIImage = UIImage(named: randomImageElement)!
+		
+		// 画像が押された時用に識別子を設定
 		image.accessibilityIdentifier = randomImageElement
+
 		// UIImageViewの初期化
 		let imageView = UIImageView(image: image)
 		
@@ -49,10 +54,13 @@ class RandomCoordinateViewController: UIViewController {
 		// 指定した座標・大きさを設定
 		imageView.frame = rect;
 
-		
+		// ユーザーのタップなどを認識するように設定！
 		imageView.isUserInteractionEnabled = true
+		
+		// タップされたときに呼ばれる関数を登録
 		imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageViewTapped)))
 		
+		// 1秒後に消えるように設定！
 		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 			imageView.removeFromSuperview()
 		}
@@ -60,10 +68,16 @@ class RandomCoordinateViewController: UIViewController {
 		self.view.addSubview(imageView)
 	}
 	
+	// ボタンが押されたときの処理
 	@objc func imageViewTapped(sender: UITapGestureRecognizer) {
+		//
 		let view = sender.view as! UIImageView
+		
 		sender.view?.removeFromSuperview()
+		
 		let identifier = view.image?.accessibilityIdentifier!
+		
+		// 上で設定した識別子に合わせてコンソールに出力する文字列を変えるSwitch文！
 		switch identifier {
 		case "cat":
 			print("ねこ")
