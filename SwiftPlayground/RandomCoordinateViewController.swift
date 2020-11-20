@@ -9,16 +9,22 @@ import UIKit
 
 class RandomCoordinateViewController: UIViewController {
 	
+	// セーフエリアを格納する用の変数
 	var safeAreaTop: Double!
 	var safeAreaBottom: Double!
 	override func viewDidLayoutSubviews() {
+		// デバイスのセーフエリアを取得する
 		safeAreaTop = Double(self.view.safeAreaInsets.top)
 		safeAreaBottom = Double(self.view.safeAreaInsets.bottom)
 	}
 	
+	// タイマーを設定
 	var generateImageTimer = Timer()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		// タイマーを起動
 		generateImageTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(generateUIIMageView), userInfo: nil, repeats: true)
 	}
 
@@ -60,7 +66,7 @@ class RandomCoordinateViewController: UIViewController {
 		// タップされたときに呼ばれる関数を登録
 		imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageViewTapped)))
 		
-		// 1秒後に消えるように設定！
+		// 1秒後に画像が消えるように設定！
 		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 			imageView.removeFromSuperview()
 		}
@@ -70,12 +76,12 @@ class RandomCoordinateViewController: UIViewController {
 	
 	// ボタンが押されたときの処理
 	@objc func imageViewTapped(sender: UITapGestureRecognizer) {
-		//
+		// タップ元を取得&識別子を取得
 		let view = sender.view as! UIImageView
-		
-		sender.view?.removeFromSuperview()
-		
 		let identifier = view.image?.accessibilityIdentifier!
+		
+		// タップされたときに消える！
+		sender.view?.removeFromSuperview()
 		
 		// 上で設定した識別子に合わせてコンソールに出力する文字列を変えるSwitch文！
 		switch identifier {
